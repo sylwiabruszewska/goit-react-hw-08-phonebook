@@ -1,47 +1,26 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-// import Notiflix from 'notiflix';
-import { Loader, Error } from 'components';
+import { Routes, Route } from 'react-router-dom';
+import { SharedLayout } from './components';
 
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { lazy } from 'react';
 
-import {
-  Container,
-  Section,
-  ContactForm,
-  ContactList,
-  FilterInput,
-  InputField,
-} from './components/index';
-
-import { fetchContacts } from 'redux/operations';
+const Home = lazy(() => import('pages/Home/Home'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Register = lazy(() => import('pages/Register/Register'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
-  const dispatch = useDispatch();
-
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <Section title="Contacts">
-        <InputField label="Find contacts by name">
-          <FilterInput />
-        </InputField>
-
-        {/* {isLoading && Notiflix.Loading.hourglass()} */}
-        {isLoading && <Loader />}
-
-        {error && <Error />}
-
-        <ContactList />
-      </Section>
-    </Container>
+    <>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
