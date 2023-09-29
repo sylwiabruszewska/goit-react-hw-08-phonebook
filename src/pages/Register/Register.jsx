@@ -2,9 +2,14 @@ import { StyledForm } from './Register.styled';
 
 import { Button, Input, InputField } from 'components';
 
+import { Helmet } from 'react-helmet';
+
 const Register = () => {
   return (
     <div>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <StyledForm>
         <InputField label="Name">
           <Input

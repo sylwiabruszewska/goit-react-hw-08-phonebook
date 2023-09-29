@@ -2,9 +2,14 @@ import { StyledForm } from './Login.styled';
 
 import { Button, Input, InputField } from 'components';
 
+import { Helmet } from 'react-helmet';
+
 const Login = () => {
   return (
     <div>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <StyledForm>
         <InputField label="Name">
           <Input

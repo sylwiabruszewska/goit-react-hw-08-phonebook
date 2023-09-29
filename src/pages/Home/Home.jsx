@@ -1,7 +1,14 @@
-// import { Heading } from './Home.styled';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
-  return <div>HOME</div>;
+  return (
+    <>
+      <Helmet>
+        <title>Phonebook</title>
+      </Helmet>
+      <div>HOME</div>
+    </>
+  );
 };
 
 export default Home;

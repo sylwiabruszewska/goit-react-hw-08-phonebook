@@ -4,6 +4,8 @@ import { Loader, Error } from 'components';
 
 import { selectIsLoading, selectError } from 'redux/selectors';
 
+import { Helmet } from 'react-helmet';
+
 import {
   Section,
   ContactForm,
@@ -26,6 +28,9 @@ const App = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Phonebook</title>
+      </Helmet>
       <h1>Phonebook</h1>
       <ContactForm />
       <Section title="Contacts">
