@@ -22,8 +22,8 @@ export const Input = props => {
 Input.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
+  title: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   required: PropTypes.bool.isRequired,
 };
