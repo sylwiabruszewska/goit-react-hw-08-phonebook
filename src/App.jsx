@@ -27,7 +27,12 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
+          <Route
+            index
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Home />} />
+            }
+          />
           <Route
             path="contacts"
             element={
