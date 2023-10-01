@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Login</title>
+        <title>Phonebook App - Login</title>
       </Helmet>
       <LoginForm />
     </div>

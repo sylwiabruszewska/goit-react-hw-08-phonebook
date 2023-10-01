@@ -29,7 +29,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Phonebook</title>
+        <title>Phonebook App - Your contact list</title>
       </Helmet>
       <h1>Phonebook</h1>
       <ContactForm />
