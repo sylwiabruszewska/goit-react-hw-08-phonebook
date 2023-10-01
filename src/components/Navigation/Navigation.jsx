@@ -1,4 +1,9 @@
-import { StyledLink, StyledLogo, StyledNav } from './Navigation.styled';
+import {
+  StyledLink,
+  StyledLogo,
+  StyledNav,
+  StyledBox,
+} from './Navigation.styled';
 
 import { UserMenu } from 'components/UserMenu';
 import { useSelector } from 'react-redux';
@@ -10,15 +15,15 @@ export const Navigation = () => {
   return (
     <StyledNav>
       <StyledLogo to="/">Phonebook</StyledLogo>
-      <StyledLink to="/contacts">Contacts</StyledLink>
 
       {userIsLogged ? (
         <UserMenu />
       ) : (
-        <>
+        <StyledBox>
+          <StyledLink to="/contacts">Contacts</StyledLink>
           <StyledLink to="/login">Sign in</StyledLink>
           <StyledLink to="/register">Register</StyledLink>
-        </>
+        </StyledBox>
       )}
     </StyledNav>
   );
