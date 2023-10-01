@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Loader, Error } from 'components';
 
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { selectIsLoading, selectError } from 'redux/contacts/selectors';
 
 import { Helmet } from 'react-helmet';
 
@@ -14,7 +14,7 @@ import {
   InputField,
 } from 'components/index';
 
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const App = () => {
   const dispatch = useDispatch();

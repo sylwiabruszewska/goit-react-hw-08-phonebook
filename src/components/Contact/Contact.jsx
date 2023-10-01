@@ -4,8 +4,8 @@ import { Button } from 'components';
 import Notiflix from 'notiflix';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
