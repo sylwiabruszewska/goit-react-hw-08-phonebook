@@ -9,8 +9,8 @@ import { useEffect, lazy } from 'react';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
-const Login = lazy(() => import('pages/Login/Login'));
-const Register = lazy(() => import('pages/Register/Register'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
@@ -37,7 +37,10 @@ export const App = () => {
           <Route
             path="login"
             element={
-              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
             }
           />
           <Route
@@ -45,7 +48,7 @@ export const App = () => {
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
-                component={<Register />}
+                component={<RegisterPage />}
               />
             }
           />

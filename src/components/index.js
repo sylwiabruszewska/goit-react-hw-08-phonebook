@@ -13,3 +13,5 @@ export * from './SharedLayout';
 export * from './Navigation';
 export * from './PrivateRoute';
 export * from './RestrictedRoute';
+export * from './RegisterForm';
+export * from './LoginForm';
