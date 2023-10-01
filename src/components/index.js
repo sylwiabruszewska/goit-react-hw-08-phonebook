@@ -11,3 +11,5 @@ export * from './Loader';
 export * from './Error';
 export * from './SharedLayout';
 export * from './Navigation';
+export * from './PrivateRoute';
+export * from './RestrictedRoute';
