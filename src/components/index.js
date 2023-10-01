@@ -15,3 +15,4 @@ export * from './PrivateRoute';
 export * from './RestrictedRoute';
 export * from './RegisterForm';
 export * from './LoginForm';
+export * from './UserMenu';
