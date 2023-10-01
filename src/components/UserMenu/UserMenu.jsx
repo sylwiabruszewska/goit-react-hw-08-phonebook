@@ -7,6 +7,8 @@ import { selectUserName } from 'redux/auth/selectors';
 
 import { StyledBox, StyledSpan, StyledBoldSpan } from './UserMenu.styled';
 
+import { FiLogOut } from 'react-icons/fi';
+
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ export const UserMenu = () => {
         Hello, <StyledBoldSpan>{userName}</StyledBoldSpan>
       </StyledSpan>
       <Button type="button" handler={handleLogOut}>
-        Logout
+        Logout <FiLogOut />
       </Button>
     </StyledBox>
   );

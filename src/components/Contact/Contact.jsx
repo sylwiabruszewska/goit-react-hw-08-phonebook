@@ -1,6 +1,13 @@
-import { StyledItem, StyledBox, StyledIcon } from './Contact.styled';
-import { faUser, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'components';
+import {
+  StyledItem,
+  StyledBox,
+  StyledIcon,
+  StyledBoxItem,
+  StyledName,
+  StyledNumber,
+} from './Contact.styled';
+
+import { ButtonDelete } from 'components';
 import Notiflix from 'notiflix';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,22 +29,22 @@ export const Contact = ({ id, name, number }) => {
 
   return (
     <StyledItem>
-      <StyledBox>
-        <StyledIcon icon={faUser} />
-        <span>{name}</span>
-      </StyledBox>
+      <StyledBoxItem>
+        <StyledIcon />
+        {/* <StyledIcon icon={faPhone} /> */}
 
-      <StyledBox>
-        <StyledIcon icon={faPhone} />
-        <span>{number}</span>
-      </StyledBox>
-      <Button
+        <StyledBox>
+          <StyledName>{name}</StyledName>
+          <StyledNumber href={`tel:${number}`}>+{number}</StyledNumber>
+        </StyledBox>
+      </StyledBoxItem>
+      <ButtonDelete
         type="button"
         handler={() => handleDelete(id)}
         customcolor="tomato"
       >
         Delete
-      </Button>
+      </ButtonDelete>
     </StyledItem>
   );
 };
