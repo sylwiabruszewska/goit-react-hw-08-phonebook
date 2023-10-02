@@ -3,7 +3,7 @@ import { logOut } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from 'components/Button';
-import { selectUserName } from 'redux/auth/selectors';
+import { selectUserName, selectUserEmail } from 'redux/auth/selectors';
 
 import { StyledBox, StyledSpan, StyledBoldSpan } from './UserMenu.styled';
 
@@ -13,6 +13,7 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userName = useSelector(selectUserName);
+  const userEmail = useSelector(selectUserEmail);
 
   const handleLogOut = () => {
     debugger;
@@ -22,8 +23,10 @@ export const UserMenu = () => {
   return (
     <StyledBox>
       <StyledSpan>
-        Hello, <StyledBoldSpan>{userName}</StyledBoldSpan>
+        Nice to see you, <StyledBoldSpan>{userName}</StyledBoldSpan>
+        {userEmail}
       </StyledSpan>
+
       <Button type="button" handler={handleLogOut}>
         Logout <FiLogOut />
       </Button>
