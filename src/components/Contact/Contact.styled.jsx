@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { FaUserCircle } from 'react-icons/fa';
+import { LuUserSquare2 } from 'react-icons/lu';
 
-export const StyledIcon = styled(FaUserCircle)`
+export const StyledIcon = styled(LuUserSquare2)`
   color: pink;
   font-size: 40px;
 `;
@@ -44,6 +44,7 @@ export const StyledBoxItem = styled.div`
 export const StyledName = styled.p`
   font-weight: 500;
   text-transform: capitalize;
+  font-size: 1.2rem;
 `;
 
 export const StyledNumber = styled.a`

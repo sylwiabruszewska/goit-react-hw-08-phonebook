@@ -31,19 +31,14 @@ export const Contact = ({ id, name, number }) => {
     <StyledItem>
       <StyledBoxItem>
         <StyledIcon />
-        {/* <StyledIcon icon={faPhone} /> */}
 
         <StyledBox>
           <StyledName>{name}</StyledName>
           <StyledNumber href={`tel:${number}`}>+{number}</StyledNumber>
         </StyledBox>
       </StyledBoxItem>
-      <ButtonDelete
-        type="button"
-        handler={() => handleDelete(id)}
-        customcolor="tomato"
-      >
-        Delete
+      <ButtonDelete type="button" handler={() => handleDelete(id)}>
+        <StyledIcon />
       </ButtonDelete>
     </StyledItem>
   );
