@@ -16,7 +16,7 @@ export const StyledButton = styled.button`
 
   &:hover {
     ${StyledIcon} {
-      color: tomato;
+      color: #fb8e5d;
     }
   }
 `;
