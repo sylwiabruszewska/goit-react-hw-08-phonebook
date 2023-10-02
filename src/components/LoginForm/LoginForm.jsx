@@ -35,7 +35,7 @@ export const LoginForm = () => {
             autocomplete="current-password"
           />
         </InputField>
-        <Button type="submit">Sign in</Button>
+        <Button type="submit">Let's Get Contacted!</Button>
       </StyledForm>
     </div>
   );

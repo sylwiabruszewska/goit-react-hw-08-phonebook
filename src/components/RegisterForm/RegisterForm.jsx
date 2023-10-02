@@ -39,7 +39,7 @@ export const RegisterForm = () => {
             autocomplete="current-password"
           />
         </InputField>
-        <Button type="submit">Sign up</Button>
+        <Button type="submit">Sign Up and Stay Connected!</Button>
       </StyledForm>
     </div>
   );
