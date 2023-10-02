@@ -7,6 +7,7 @@ export const StyledFilterInput = styled.input`
   border: 0;
   margin: 4px 0 20px;
   width: 100%;
+  height: 40px;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -15,7 +16,7 @@ export const StyledFilterInput = styled.input`
   transition: background-color 0.3s ease;
 
   &:focus {
-    outline: 2px solid #71a3ff;
+    outline: 2px solid #a06cd5;
   }
 
   @media (min-width: 1200px) {

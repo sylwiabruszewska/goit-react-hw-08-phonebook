@@ -8,7 +8,7 @@ export const ErrorMessage = styled.div`
 
 export const StyledInput = styled.input`
   display: block;
-  padding: 5px;
+  padding: 5px 10px;
   outline: 1px solid #dddddd;
   border: 0;
   margin: 4px 0;
@@ -19,18 +19,16 @@ export const StyledInput = styled.input`
   color: #666666;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  height: 40px;
 
   &:focus {
-    outline: 2px solid #71a3ff;
+    outline: 2px solid #a06cd5;
   }
   &:not(:placeholder-shown):invalid {
     outline: 2px solid tomato;
   }
   &:not(:placeholder-shown):valid {
     outline: 2px solid limegreen;
-  }
-  @media (min-width: 1200px) {
-    width: 50%;
   }
 
   &:not(:placeholder-shown):invalid + ${ErrorMessage} {
