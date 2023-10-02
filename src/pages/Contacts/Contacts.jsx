@@ -6,6 +6,8 @@ import { selectIsLoading, selectError } from 'redux/contacts/selectors';
 
 import { Helmet } from 'react-helmet';
 
+import { Container } from 'components';
+
 import {
   Section,
   ContactForm,
@@ -31,16 +33,18 @@ const App = () => {
       <Helmet>
         <title>Phonebook App - Your contact list</title>
       </Helmet>
-      <h1>Your Contacts:</h1>
-      <p>Add a new contact here:</p>
-      <ContactForm />
-      <Section title="Contacts">
-        <InputField label="Find contacts by name">
-          <FilterInput />
-        </InputField>
+      <Container>
+        <h1>Your Contacts:</h1>
+        <p>Add a new contact here:</p>
+        <ContactForm />
+        <Section title="Contacts">
+          <InputField label="Search contacts...">
+            <FilterInput />
+          </InputField>
 
-        {isLoading ? <Loader /> : error ? <Error /> : <ContactList />}
-      </Section>
+          {isLoading ? <Loader /> : error ? <Error /> : <ContactList />}
+        </Section>
+      </Container>
     </>
   );
 };
