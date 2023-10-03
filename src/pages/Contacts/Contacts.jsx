@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import {
@@ -23,13 +23,38 @@ import {
   StyledBox,
   IconSearch,
   StyledImg,
+  ButtonUp,
 } from './Contacts.styled';
 
-const App = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
 
   const error = useSelector(selectError);
   const contacts = useSelector(selectContacts);
+
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -67,8 +92,10 @@ const App = () => {
           </StyledBook>
         </Container>
       </Content>
+
+      {showButton && <ButtonUp onClick={scrollToTop} />}
     </>
   );
 };
 
-export default App;
+export default Contacts;

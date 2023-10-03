@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BiSearchAlt } from 'react-icons/bi';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 
 export const Heading = styled.h1`
   color: gray;
@@ -52,4 +53,20 @@ export const StyledBox = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 2rem 0 1rem;
+`;
+
+export const ButtonUp = styled(BsFillArrowUpCircleFill)`
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  font-size: 2.5rem;
+  color: #a06cd5;
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    color: #fb8e5d;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
 `;
