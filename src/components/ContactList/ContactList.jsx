@@ -14,6 +14,8 @@ export const ContactList = () => {
     return contact.name.toLowerCase().includes(filter.toLowerCase());
   });
 
+  filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <ul>
       {filteredContacts.map(({ id, name, number }) => (
