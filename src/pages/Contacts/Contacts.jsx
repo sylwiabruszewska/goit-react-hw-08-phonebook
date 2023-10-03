@@ -1,22 +1,30 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Loader, Error } from 'components';
-
-import { selectIsLoading, selectError } from 'redux/contacts/selectors';
-
 import { Helmet } from 'react-helmet';
 
-import { Container } from 'components';
-
 import {
-  Section,
+  Loader,
+  Error,
+  Container,
+  Content,
   ContactForm,
   ContactList,
   FilterInput,
-  InputField,
-} from 'components/index';
-
+} from 'components';
+import { selectIsLoading, selectError } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
+
+import photo from 'images/contacts.png';
+import {
+  Heading,
+  Text,
+  StyledBook,
+  Divider,
+  StyledWrapper,
+  StyledBox,
+  IconSearch,
+  StyledImg,
+} from './Contacts.styled';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,18 +41,26 @@ const App = () => {
       <Helmet>
         <title>Phonebook App - Your contact list</title>
       </Helmet>
-      <Container>
-        <h1>Your Contacts:</h1>
-        <p>Add a new contact here:</p>
-        <ContactForm />
-        <Section title="Contacts">
-          <InputField label="Search contacts...">
-            <FilterInput />
-          </InputField>
-
-          {isLoading ? <Loader /> : error ? <Error /> : <ContactList />}
-        </Section>
-      </Container>
+      <Content>
+        <Container>
+          <StyledBook>
+            <div>
+              <Heading>Your Contacts</Heading>
+              <StyledBox>
+                <IconSearch />
+                <FilterInput />
+              </StyledBox>
+              {isLoading ? <Loader /> : error ? <Error /> : <ContactList />}
+            </div>
+            <Divider />
+            <StyledWrapper>
+              <StyledImg src={photo} />
+              <Text>Add a new contact here:</Text>
+              <ContactForm />
+            </StyledWrapper>
+          </StyledBook>
+        </Container>
+      </Content>
     </>
   );
 };
