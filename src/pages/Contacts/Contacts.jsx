@@ -10,7 +10,7 @@ import {
   ContactList,
   FilterInput,
 } from 'components';
-import { selectError } from 'redux/contacts/selectors';
+import { selectError, selectContacts } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
 
 import photo from 'images/contacts.png';
@@ -29,6 +29,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const error = useSelector(selectError);
+  const contacts = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -44,11 +45,18 @@ const App = () => {
           <StyledBook>
             <div>
               <Heading>Your Contacts</Heading>
-              <StyledBox>
-                <IconSearch />
-                <FilterInput />
-              </StyledBox>
-              {error ? <Error /> : <ContactList />}
+
+              {contacts.length > 0 ? (
+                <>
+                  <StyledBox>
+                    <IconSearch />
+                    <FilterInput />
+                  </StyledBox>
+                  {error ? <Error /> : <ContactList />}
+                </>
+              ) : (
+                <p>It's so empty here! Add some contacts.</p>
+              )}
             </div>
             <Divider />
             <StyledWrapper>
