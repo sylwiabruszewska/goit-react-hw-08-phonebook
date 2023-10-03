@@ -16,7 +16,6 @@ export const UserMenu = () => {
   const userEmail = useSelector(selectUserEmail);
 
   const handleLogOut = () => {
-    debugger;
     dispatch(logOut());
     navigate('/');
   };
