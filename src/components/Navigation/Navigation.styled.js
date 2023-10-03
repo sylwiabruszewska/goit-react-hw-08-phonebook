@@ -2,36 +2,24 @@ import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 
 export const StyledLink = styled(NavLink)`
-  color: white;
-  padding: 10px;
+  color: gray;
   text-decoration: none;
   font-size: 20px;
-  font-weight: bold;
-  padding: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 
-  &.active {
-    border: 2px solid #8dc6ff;
-    border-radius: 10px;
-    color: #8dc6ff;
-  }
-
+  &.active,
   &:hover {
-    color: #8dc6ff;
+    color: #fb8e5d;
   }
 `;
 
 export const StyledLogo = styled(Link)`
-  font-size: 36px;
+  font-size: 2rem;
   text-decoration: none;
-  color: black;
+  color: gray;
   margin-right: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  background-image: linear-gradient(45deg, #8dc6ff, #0092ca);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  text-transform: lowercase;
 `;
 
 export const StyledNav = styled.nav`
@@ -45,5 +33,5 @@ export const StyledBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 `;
