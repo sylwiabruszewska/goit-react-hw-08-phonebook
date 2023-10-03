@@ -13,7 +13,6 @@ export const StyledItem = styled.li`
   justify-content: space-between;
   gap: 10px;
   padding: 10px;
-  margin: 10px auto;
   background-color: #fff;
   border-radius: 10px;
   color: #313131;
