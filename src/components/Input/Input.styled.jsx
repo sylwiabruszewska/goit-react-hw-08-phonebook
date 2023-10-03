@@ -11,8 +11,8 @@ export const StyledInput = styled.input`
   padding: 5px 10px;
   outline: 1px solid #dddddd;
   border: 0;
-  margin: 4px 0;
-  width: 100%;
+  margin: 0.6rem 0;
+  width: 300px;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,7 @@ export const StyledInput = styled.input`
   }
 
   &:not(:placeholder-shown):invalid + ${ErrorMessage} {
-    display: block;
+    display: inline-block;
+    max-width: 300px;
   }
 `;
