@@ -21,7 +21,12 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  const handleAddContact = ({ name, number }) => {
+  const onSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
+
     const isContactExists = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
@@ -29,18 +34,10 @@ export const ContactForm = () => {
     if (!isContactExists) {
       dispatch(addContact({ name, number }));
       Notiflix.Notify.success(`Contact ${name} added successfully`);
+      form.reset();
     } else {
       Notiflix.Notify.warning(`${name} is already in contacts`);
     }
-  };
-
-  const onSubmit = event => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.elements.name.value;
-    const number = form.elements.number.value;
-    handleAddContact({ name, number });
-    form.reset();
   };
 
   return (
