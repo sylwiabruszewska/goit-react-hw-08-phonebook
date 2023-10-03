@@ -1,22 +1,21 @@
 import { Oval } from 'react-loader-spinner';
-import { StyledLoader, StyledText } from './Loader.styled';
+import { StyledLoader } from './Loader.styled';
 
 export const Loader = () => {
   return (
     <StyledLoader>
       <Oval
-        height={50}
-        width={50}
-        color="#8dc6ff"
+        height={60}
+        width={60}
+        color="#a06cd5"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
         ariaLabel="oval-loading"
-        secondaryColor="#0092ca"
+        secondaryColor="#fff"
         strokeWidth={2}
         strokeWidthSecondary={2}
       />
-      <StyledText>Contacts are loading...</StyledText>
     </StyledLoader>
   );
 };
