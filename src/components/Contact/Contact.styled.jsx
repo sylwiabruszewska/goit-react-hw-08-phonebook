@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { LuUserSquare2 } from 'react-icons/lu';
 
 export const StyledIcon = styled(LuUserSquare2)`
-  color: pink;
+  color: #a06cd5;
   font-size: 40px;
 `;
 
@@ -17,14 +17,9 @@ export const StyledItem = styled.li`
   background-color: #fff;
   border-radius: 10px;
   color: #313131;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: pink;
-
-    ${StyledIcon} {
-      color: white;
-    }
+    background-color: #f4f4f2;
   }
 `;
 
