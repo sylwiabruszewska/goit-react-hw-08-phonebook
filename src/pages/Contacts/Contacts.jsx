@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import {
-  Loader,
   Error,
   Container,
   Content,
@@ -11,7 +10,7 @@ import {
   ContactList,
   FilterInput,
 } from 'components';
-import { selectIsLoading, selectError } from 'redux/contacts/selectors';
+import { selectError } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
 
 import photo from 'images/contacts.png';
@@ -29,7 +28,6 @@ import {
 const App = () => {
   const dispatch = useDispatch();
 
-  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
@@ -50,7 +48,7 @@ const App = () => {
                 <IconSearch />
                 <FilterInput />
               </StyledBox>
-              {isLoading ? <Loader /> : error ? <Error /> : <ContactList />}
+              {error ? <Error /> : <ContactList />}
             </div>
             <Divider />
             <StyledWrapper>
