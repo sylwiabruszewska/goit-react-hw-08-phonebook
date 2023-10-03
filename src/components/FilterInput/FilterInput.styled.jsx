@@ -5,8 +5,8 @@ export const StyledFilterInput = styled.input`
   padding: 5px;
   outline: 1px solid #dddddd;
   border: 0;
-  margin: 4px 0 20px;
-  width: 100%;
+  margin: 0 10px;
+  width: 500px;
   height: 40px;
   background-color: white;
   border-radius: 4px;
@@ -19,7 +19,7 @@ export const StyledFilterInput = styled.input`
     outline: 2px solid #a06cd5;
   }
 
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     width: 50%;
-  }
+  } */
 `;

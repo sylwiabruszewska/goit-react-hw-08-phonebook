@@ -15,7 +15,7 @@ export const FilterInput = () => {
     <StyledFilterInput
       type="text"
       name="filter"
-      placeholder="Search by name"
+      placeholder="Search contacts..."
       onChange={handleFilterChange}
     />
   );
