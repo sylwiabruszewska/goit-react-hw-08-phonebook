@@ -1,4 +1,4 @@
-import { StyledForm } from './ContactForm.styled';
+import { StyledForm, IconAddContact } from './ContactForm.styled';
 import { Button, Input, InputField } from 'components';
 import Notiflix from 'notiflix';
 
@@ -56,7 +56,9 @@ export const ContactForm = () => {
         />
       </InputField>
 
-      <Button type="submit">Add contact</Button>
+      <Button type="submit">
+        Add contact <IconAddContact />
+      </Button>
     </StyledForm>
   );
 };
