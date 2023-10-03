@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import { StyledInput, ErrorMessage } from './Input.styled';
 
 export const Input = props => {
-  const { type, name, pattern, title, placeholder, required } = props;
+  const {
+    type,
+    name,
+    pattern,
+    title,
+    placeholder,
+    required,
+    onChange = null,
+  } = props;
 
   return (
     <>
@@ -13,6 +21,7 @@ export const Input = props => {
         placeholder={placeholder}
         required={required}
         pattern={pattern}
+        onChange={onChange}
       />
       <ErrorMessage>{title}</ErrorMessage>
     </>
@@ -26,4 +35,5 @@ Input.propTypes = {
   title: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   required: PropTypes.bool.isRequired,
+  onChange: PropTypes.func,
 };
