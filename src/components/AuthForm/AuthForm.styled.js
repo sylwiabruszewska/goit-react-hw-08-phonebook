@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { BiSolidLockAlt } from 'react-icons/bi';
 
@@ -19,4 +20,12 @@ export const StyledFormTitle = styled.h3`
 export const StyledIcon = styled(BiSolidLockAlt)`
   font-size: 2rem;
   color: #a06cd5;
+`;
+
+export const StyledLink = styled(Link)`
+  font-weight: 500;
+
+  &:hover {
+    color: #a06cd5;
+  }
 `;

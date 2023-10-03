@@ -3,7 +3,12 @@ import { useDispatch } from 'react-redux';
 import { register, logIn } from 'redux/auth/operations';
 import { useState } from 'react';
 
-import { StyledForm, StyledFormTitle, StyledIcon } from './AuthForm.styled';
+import {
+  StyledForm,
+  StyledFormTitle,
+  StyledIcon,
+  StyledLink,
+} from './AuthForm.styled';
 import { Button, Input, InputField } from 'components';
 
 export const AuthForm = () => {
@@ -75,6 +80,16 @@ export const AuthForm = () => {
             ? `Sign Up and Stay Connected!`
             : `Let's Get Contacted!`}
         </Button>
+
+        {location === '/login' ? (
+          <p>
+            New here? <StyledLink to="/login">Sign up</StyledLink>
+          </p>
+        ) : (
+          <p>
+            Are you already in? <StyledLink to="/login">Sign in</StyledLink>
+          </p>
+        )}
       </StyledForm>
     </div>
   );
