@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 
+import { StyledLabel } from './InputField.styled';
+
 export const InputField = ({ label, children: input }) => {
   return (
-    <label>
+    <StyledLabel>
       {label}
       {input}
-    </label>
+    </StyledLabel>
   );
 };
 
