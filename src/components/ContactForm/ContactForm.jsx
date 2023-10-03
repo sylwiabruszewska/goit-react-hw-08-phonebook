@@ -6,6 +6,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 
+Notiflix.Notify.init({
+  width: '300px',
+  position: 'center-top',
+  success: {
+    background: '#a06cd5',
+  },
+  warning: {
+    background: '#fb8e5d',
+  },
+});
+
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
