@@ -65,3 +65,7 @@ export const StyledIcon = styled.p`
 export const HighlightedText = styled.span`
   color: #fb8e5d;
 `;
+
+export const StyledHeading = styled.h3`
+  margin-bottom: 1rem;
+`;

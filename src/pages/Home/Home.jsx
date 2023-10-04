@@ -13,6 +13,7 @@ import {
   StyledParagraph,
   StyledLink,
   StyledImg,
+  StyledHeading,
 } from './Home.styled';
 import { Button } from 'components';
 import { BsStars } from 'react-icons/bs';
@@ -40,11 +41,10 @@ const Home = () => {
               <StyledIcon>
                 <FaBook />
               </StyledIcon>
-              <h3>Keep your contacts close</h3>
+              <StyledHeading>Keep your contacts close</StyledHeading>
               <p>
-                Phonebook App allows you to safely store and manage all your
-                contacts in one place. No more worries about losing important
-                phone numbers. Stay connected with ease.
+                No more worries about losing important phone numbers. Stay
+                connected with ease.
               </p>
             </ListItem>
 
@@ -52,12 +52,10 @@ const Home = () => {
               <StyledIcon>
                 <BsStars />
               </StyledIcon>
-              <h3>Simplified Contact Management</h3>
+              <StyledHeading>Simplified Contact Management</StyledHeading>
               <p>
                 Our user-friendly interface makes it simple to add and manage
-                your contacts. You can quickly add new contacts and remove
-                outdated ones with just a few clicks. Simplify your life by
-                keeping your contacts organized and up to date.
+                your contacts with just a few clicks.
               </p>
             </ListItem>
 
@@ -65,11 +63,10 @@ const Home = () => {
               <StyledIcon>
                 <FaCloud />
               </StyledIcon>
-              <h3>Access Your Contacts Anywhere</h3>
+              <StyledHeading>Access Your Contacts Anywhere</StyledHeading>
               <p>
                 Create your account and securely store all your contacts in one
-                place. Your data is safely stored in your account, ensuring that
-                you're always in touch, no matter where you are.
+                place.
               </p>
             </ListItem>
           </StyledList>
