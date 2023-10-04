@@ -16,3 +16,5 @@ export * from './AuthForm';
 export * from './UserMenu';
 export * from './ButtonDelete';
 export * from './Content';
+export * from './Modal';
+export * from './ContactDetails';
