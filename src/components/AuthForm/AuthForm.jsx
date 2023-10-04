@@ -89,7 +89,7 @@ export const AuthForm = () => {
 
         {location === '/login' ? (
           <p>
-            New here? <StyledLink to="/login">Sign up</StyledLink>
+            New here? <StyledLink to="/register">Sign up</StyledLink>
           </p>
         ) : (
           <p>
