@@ -1,6 +1,5 @@
-import React from 'react';
-import { Overlay } from './Modal.styled.js';
-import { Container, ContactDetails } from 'components';
+import { Overlay, StyledIconClose, BoxForButton } from './Modal.styled.js';
+import { Container, ContactDetails, ButtonIcon } from 'components';
 import { useModal } from 'hooks/useModal.js';
 
 export const Modal = () => {
@@ -9,7 +8,12 @@ export const Modal = () => {
   return (
     <Overlay onClick={handleCloseModal}>
       <Container>
-        <button onClick={handleCloseModal}>Close</button>
+        <BoxForButton>
+          <ButtonIcon onClick={handleCloseModal}>
+            <StyledIconClose />
+          </ButtonIcon>
+        </BoxForButton>
+
         <ContactDetails />
       </Container>
     </Overlay>

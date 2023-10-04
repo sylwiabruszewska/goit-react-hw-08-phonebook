@@ -13,6 +13,7 @@ export const StyledContainer = styled.div`
   min-width: 300px;
   width: fit-content;
 
+  position: relative;
   /* @media (min-width: 768px) {
     width: fit-content;
   }
