@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-// change img for 404
-import photo from 'images/auth.png';
+import photo from 'images/404.png';
 import { Content, Button } from 'components';
 import { StyledImg, StyledHeading, StyledText } from './NotFound.styled';
 
