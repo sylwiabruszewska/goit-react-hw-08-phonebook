@@ -1,10 +1,32 @@
 import styled from 'styled-components';
 
 import { LuUserSquare2 } from 'react-icons/lu';
+import { RiEdit2Fill } from 'react-icons/ri';
+import { FaTrashAlt } from 'react-icons/fa';
 
 export const StyledIcon = styled(LuUserSquare2)`
   color: #a06cd5;
   font-size: 40px;
+`;
+
+export const StyledIconDelete = styled(FaTrashAlt)`
+  color: gray;
+  font-size: 20px;
+
+  &:hover {
+    color: #fb8e5d;
+    cursor: pointer;
+  }
+`;
+
+export const StyledIconEdit = styled(RiEdit2Fill)`
+  color: gray;
+  font-size: 20px;
+
+  &:hover {
+    color: #fb8e5d;
+    cursor: pointer;
+  }
 `;
 
 export const StyledItem = styled.li`
