@@ -48,6 +48,8 @@ export const AuthForm = () => {
               name="name"
               value={name}
               placeholder="Name"
+              title="Name may contain only letters, apostrophe, dash and spaces."
+              pattern="^[A-Za-z\s'\-]+$"
               required
               onChange={e => setName(e.target.value)}
             />
@@ -60,6 +62,8 @@ export const AuthForm = () => {
             name="email"
             value={email}
             placeholder="Email"
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            title="The email must be a valid email address in the following format: characters@characters.domain."
             required
             onChange={e => setEmail(e.target.value)}
           />
@@ -70,6 +74,8 @@ export const AuthForm = () => {
             name="password"
             value={password}
             placeholder="Password"
+            title="The password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character."
+            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
             required
             autocomplete="current-password"
             onChange={e => setPassword(e.target.value)}
