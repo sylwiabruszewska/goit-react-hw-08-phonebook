@@ -36,7 +36,7 @@ const Contacts = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY) {
+      if (window.scrollY > 300) {
         setShowButton(true);
       } else {
         setShowButton(false);
