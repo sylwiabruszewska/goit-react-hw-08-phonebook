@@ -2,9 +2,16 @@ import styled from 'styled-components';
 
 export const StyledBox = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  align-items: center;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
+  }
 `;
 
 export const StyledSpan = styled.span`

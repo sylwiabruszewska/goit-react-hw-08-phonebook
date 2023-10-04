@@ -30,8 +30,12 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
 `;

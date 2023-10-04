@@ -6,7 +6,7 @@ export const StyledFilterInput = styled.input`
   outline: 1px solid #dddddd;
   border: 0;
   margin: 0 10px;
-  width: 500px;
+  width: 300px;
   height: 40px;
   background-color: white;
   border-radius: 4px;
@@ -15,11 +15,15 @@ export const StyledFilterInput = styled.input`
   font-weight: 600;
   transition: background-color 0.3s ease;
 
+  @media (min-width: 768px) {
+    width: 300px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 500px;
+  }
+
   &:focus {
     outline: 2px solid #a06cd5;
   }
-
-  /* @media (min-width: 1200px) {
-    width: 50%;
-  } */
 `;

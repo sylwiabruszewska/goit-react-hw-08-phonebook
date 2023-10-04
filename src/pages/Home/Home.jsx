@@ -28,6 +28,7 @@ const Home = () => {
         <title>Phonebook App</title>
       </Helmet>
       <StyledHome>
+        <StyledImg src={photo} />
         <StyledTextWrapper>
           <PageHeading>
             Welcome to <HighlightedText>Phonebook App</HighlightedText>
@@ -78,7 +79,6 @@ const Home = () => {
             Already a member? <StyledLink to="/login">Sign in</StyledLink>
           </StyledParagraph>
         </StyledTextWrapper>
-        <StyledImg src={photo} />
       </StyledHome>
     </>
   );

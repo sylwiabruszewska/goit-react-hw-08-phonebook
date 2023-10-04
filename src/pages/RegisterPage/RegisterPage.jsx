@@ -8,8 +8,31 @@ import { Container, Content } from 'components';
 
 const StyledImg = styled.img`
   width: auto;
-  height: 500px;
+  height: 200px;
   object-fit: contain;
+
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 500px;
+  }
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
 `;
 
 const RegisterPage = () => {
@@ -20,10 +43,12 @@ const RegisterPage = () => {
       </Helmet>
 
       <Content>
-        <Container>
-          <AuthForm />
-        </Container>
-        <StyledImg src={photo} />
+        <StyledWrapper>
+          <Container>
+            <AuthForm />
+          </Container>
+          <StyledImg src={photo} />
+        </StyledWrapper>
       </Content>
     </>
   );

@@ -19,7 +19,16 @@ export const Text = styled.p`
 
 export const StyledBook = styled.div`
   display: flex;
-  gap: 50px;
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 50px;
+  }
 `;
 
 export const Divider = styled.div`

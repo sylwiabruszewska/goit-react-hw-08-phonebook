@@ -11,14 +11,11 @@ export const StyledContainer = styled.div`
   align-items: center;
 
   min-width: 300px;
-  width: fit-content;
+  width: 100%;
 
   position: relative;
-  /* @media (min-width: 768px) {
+
+  @media (min-width: 768px) {
     width: fit-content;
   }
-
-  @media (min-width: 1200px) {
-    width: fit-content;
-  } */
 `;
