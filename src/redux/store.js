@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsReducer } from './contacts/contactsSlice';
 import { filterReducer } from './contacts/filterSlice';
+import { modalReducer } from './modal/modalSlice';
 
 import { authReducer } from './auth/authSlice';
 
@@ -29,6 +30,7 @@ export const store = configureStore({
     auth: persistedReducer,
     contacts: contactsReducer,
     filter: filterReducer,
+    modal: modalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
