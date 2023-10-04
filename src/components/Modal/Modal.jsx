@@ -5,8 +5,14 @@ import { useModal } from 'hooks/useModal.js';
 export const Modal = () => {
   const { handleCloseModal } = useModal();
 
+  const handleOverlayClick = event => {
+    if (event.target === event.currentTarget) {
+      handleCloseModal();
+    }
+  };
+
   return (
-    <Overlay onClick={handleCloseModal}>
+    <Overlay onClick={handleOverlayClick}>
       <Container>
         <BoxForButton>
           <ButtonIcon onClick={handleCloseModal}>
