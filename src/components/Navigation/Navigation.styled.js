@@ -24,9 +24,18 @@ export const StyledLogo = styled(Link)`
 
 export const StyledNav = styled.nav`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 export const StyledBox = styled.div`

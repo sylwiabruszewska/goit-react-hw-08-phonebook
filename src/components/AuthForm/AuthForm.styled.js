@@ -24,6 +24,7 @@ export const StyledIcon = styled(BiSolidLockAlt)`
 
 export const StyledLink = styled(Link)`
   font-weight: 500;
+  color: #513072;
 
   &:hover {
     color: #a06cd5;

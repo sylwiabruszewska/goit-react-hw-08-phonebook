@@ -46,12 +46,14 @@ export const StyledTextWrapper = styled.div`
 export const PageHeading = styled.h1`
   margin: 2rem 0;
   font-size: 3rem;
+  text-align: center;
 `;
 
 export const EmphasizedText = styled.p`
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 1rem;
+  text-align: center;
 
   @media (min-width: 1200px) {
     margin-bottom: 3rem;
@@ -70,6 +72,7 @@ export const ListItem = styled.li`
 
 export const StyledLink = styled(Link)`
   font-weight: 500;
+  color: #513072;
 
   &:hover {
     color: #a06cd5;
