@@ -51,10 +51,9 @@ export const ContactDetails = () => {
       );
 
       Notiflix.Notify.success(`Contact ${name} edited successfully`);
-      handleCloseModal();
-    } else {
-      Notiflix.Notify.warning(`${name} is already in contacts`);
     }
+
+    handleCloseModal();
   };
 
   return (
