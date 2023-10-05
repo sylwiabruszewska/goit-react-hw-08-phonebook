@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 
 import { selectContactDetails } from 'redux/contacts/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 import { closeModal } from 'redux/modal/modalSlice';
 
@@ -22,6 +23,7 @@ Notiflix.Notify.init({
 
 export const ContactDetails = () => {
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
   const contactDetails = useSelector(selectContactDetails);
 
@@ -35,17 +37,26 @@ export const ContactDetails = () => {
     const name = form.elements.name.value;
     const number = form.elements.number.value;
 
-    dispatch(
-      editContact({
-        contactId: contactDetails.id,
-        contactName: name,
-        contactNumber: number,
-      })
+    const isContactExists = contacts.some(
+      contact =>
+        contact.name.toLowerCase() === name.toLowerCase() &&
+        contact.id !== contactDetails.id
     );
 
-    Notiflix.Notify.success(`Contact ${name} edited successfully`);
+    if (!isContactExists) {
+      dispatch(
+        editContact({
+          contactId: contactDetails.id,
+          contactName: name,
+          contactNumber: number,
+        })
+      );
 
-    handleCloseModal();
+      Notiflix.Notify.success(`Contact ${name} edited successfully`);
+      handleCloseModal();
+    } else {
+      Notiflix.Notify.warning(`${name} is already in contacts`);
+    }
   };
 
   return (
