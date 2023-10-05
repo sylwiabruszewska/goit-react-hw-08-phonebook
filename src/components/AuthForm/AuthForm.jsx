@@ -74,8 +74,8 @@ export const AuthForm = () => {
             name="password"
             value={password}
             placeholder="Password"
-            title="The password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character."
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            title="The password must be at least 8 characters long."
+            pattern=".{8,}"
             required
             autocomplete="current-password"
             onChange={e => setPassword(e.target.value)}
