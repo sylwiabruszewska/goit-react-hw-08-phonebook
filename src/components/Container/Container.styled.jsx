@@ -11,11 +11,6 @@ export const StyledContainer = styled.div`
   align-items: center;
 
   min-width: 300px;
-  width: 100%;
-
+  width: fit-content;
   position: relative;
-
-  @media (min-width: 768px) {
-    width: fit-content;
-  }
 `;
