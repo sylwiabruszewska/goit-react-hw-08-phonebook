@@ -1,4 +1,4 @@
-import { StyledForm, StyledText } from './ContactDetails.styled';
+import { StyledForm } from './ContactDetails.styled';
 import { Button, InputField, Input } from 'components';
 import Notiflix from 'notiflix';
 
@@ -62,7 +62,6 @@ export const ContactDetails = () => {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledText>Edit contact:</StyledText>
       <InputField label={'Name'}>
         <Input
           type="text"

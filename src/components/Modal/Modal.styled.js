@@ -30,3 +30,37 @@ export const BoxForButton = styled.div`
   top: 10px;
   right: 10px;
 `;
+
+export const StyledModalTitle = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+`;
+
+export const ModalBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StyledModalContent = styled.p`
+  margin-bottom: 1.2rem;
+`;
+
+export const ModalContainer = styled.div`
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  color: #313131;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 300px;
+  width: fit-content;
+  max-width: 60%;
+  position: relative;
+  max-height: 90%;
+  overflow-y: auto;
+`;

@@ -10,11 +10,8 @@ import {
 } from './Contact.styled';
 
 import { ButtonIcon } from 'components';
-import Notiflix from 'notiflix';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contacts/operations';
-import { selectContacts } from 'redux/contacts/selectors';
+import { useDispatch } from 'react-redux';
 
 import { openModal } from 'redux/modal/modalSlice';
 
@@ -22,26 +19,35 @@ import { setContactDetails } from 'redux/contacts/contactsSlice';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
 
-  const handleContactClick = () => {
-    const contact = {
-      id,
-      name,
-      number,
+  const contact = {
+    id,
+    name,
+    number,
+  };
+
+  const handleContactEdit = () => {
+    const modalData = {
+      title: 'Edit contact',
+      showConfirmButton: false,
+      component: 'ContactDetails',
     };
 
     dispatch(setContactDetails(contact));
-    dispatch(openModal());
+    dispatch(openModal(modalData));
   };
 
-  const handleDelete = () => {
-    const contactToDelete = contacts.find(contact => contact.id === id);
+  const handleContactDelete = () => {
+    const modalData = {
+      title: 'Delete contact',
+      content: `Are you sure you want to delete ${contact.name} from your contact list?`,
+      showConfirmButton: true,
+      confirmButtonText: 'Delete',
+      confirmButtonAction: 'handleContactDelete',
+    };
 
-    if (contactToDelete) {
-      dispatch(deleteContact(id));
-      Notiflix.Notify.success(`${contactToDelete.name} has been removed`);
-    }
+    dispatch(setContactDetails(contact));
+    dispatch(openModal(modalData));
   };
 
   return (
@@ -56,10 +62,10 @@ export const Contact = ({ id, name, number }) => {
           </StyledBox>
         </StyledBoxItem>
         <div>
-          <ButtonIcon type="button" handler={() => handleContactClick()}>
+          <ButtonIcon type="button" handler={() => handleContactEdit()}>
             <StyledIconEdit />
           </ButtonIcon>
-          <ButtonIcon type="button" handler={() => handleDelete(id)}>
+          <ButtonIcon type="button" handler={() => handleContactDelete()}>
             <StyledIconDelete />
           </ButtonIcon>
         </div>

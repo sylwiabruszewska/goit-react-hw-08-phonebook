@@ -2,19 +2,26 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register, logIn } from 'redux/auth/operations';
 import { useState } from 'react';
+import Notiflix from 'notiflix';
 
 import {
   StyledForm,
   StyledFormTitle,
   StyledIcon,
   StyledLink,
+  CheckboxLabel,
 } from './AuthForm.styled';
 import { Button, Input, InputField } from 'components';
+
+import { openModal } from 'redux/modal/modalSlice';
+
+import { terms } from './terms';
 
 export const AuthForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAgreed, setIsAgreed] = useState(false);
 
   const dispatch = useDispatch();
   const location = useLocation().pathname;
@@ -24,6 +31,13 @@ export const AuthForm = () => {
     const form = event.currentTarget;
 
     if (location === '/register') {
+      if (!isAgreed) {
+        Notiflix.Notify.warning(
+          'Please agree to the Terms and Privacy Policy.'
+        );
+        return;
+      }
+
       dispatch(register({ name, email, password }));
     }
 
@@ -32,6 +46,15 @@ export const AuthForm = () => {
     }
 
     form.reset();
+  };
+
+  const openModalOnClick = () => {
+    dispatch(
+      openModal({
+        title: 'Terms and Privacy Policy',
+        content: `${terms}`,
+      })
+    );
   };
 
   return (
@@ -55,7 +78,6 @@ export const AuthForm = () => {
             />
           </InputField>
         ) : null}
-
         <InputField label="Email">
           <Input
             type="email"
@@ -82,12 +104,33 @@ export const AuthForm = () => {
             onChange={e => setPassword(e.target.value)}
           />
         </InputField>
+
+        {location === '/register' ? (
+          <CheckboxLabel>
+            <input
+              type="checkbox"
+              checked={isAgreed}
+              onChange={() => setIsAgreed(!isAgreed)}
+            />
+            <div>
+              Do you accept our
+              <StyledLink
+                onClick={e => {
+                  e.preventDefault();
+                  openModalOnClick();
+                }}
+              >
+                Terms and Privacy Policy?
+              </StyledLink>
+            </div>
+          </CheckboxLabel>
+        ) : null}
+
         <Button type="submit">
           {location === '/register'
             ? `Sign Up and Stay Connected!`
             : `Let's Get Contacted!`}
         </Button>
-
         {location === '/login' ? (
           <p>
             New here? <StyledLink to="/register">Sign up</StyledLink>

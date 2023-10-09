@@ -13,11 +13,6 @@ export const IconAddContact = styled(LuUserPlus2)`
   font-size: 1.5rem;
 `;
 
-export const StyledText = styled.p`
-  font-size: 1.2rem;
-  font-weight: 500;
-`;
-
 ////////////////////
 export const ErrorMessage = styled.div`
   color: tomato;
