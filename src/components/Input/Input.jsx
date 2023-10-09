@@ -10,6 +10,8 @@ export const Input = props => {
     placeholder,
     required,
     onChange = null,
+    defaultValue = null,
+    autocomplete = null,
   } = props;
 
   return (
@@ -22,6 +24,8 @@ export const Input = props => {
         required={required}
         pattern={pattern}
         onChange={onChange}
+        defaultValue={defaultValue}
+        autoComplete={autocomplete}
       />
       <ErrorMessage>{title}</ErrorMessage>
     </>
@@ -36,4 +40,5 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   required: PropTypes.bool.isRequired,
   onChange: PropTypes.func,
+  defaultValue: PropTypes.string,
 };

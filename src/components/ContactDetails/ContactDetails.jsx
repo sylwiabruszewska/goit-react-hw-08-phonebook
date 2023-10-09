@@ -1,5 +1,5 @@
-import { StyledForm, StyledInput, StyledText } from './ContactDetails.styled';
-import { Button, InputField } from 'components';
+import { StyledForm, StyledText } from './ContactDetails.styled';
+import { Button, InputField, Input } from 'components';
 import Notiflix from 'notiflix';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,6 +13,7 @@ import { closeModal } from 'redux/modal/modalSlice';
 Notiflix.Notify.init({
   width: '300px',
   position: 'center-top',
+  timeout: 5000,
   success: {
     background: '#a06cd5',
   },
@@ -63,7 +64,7 @@ export const ContactDetails = () => {
     <StyledForm onSubmit={onSubmit}>
       <StyledText>Edit contact:</StyledText>
       <InputField label={'Name'}>
-        <StyledInput
+        <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -71,10 +72,10 @@ export const ContactDetails = () => {
           placeholder="Name"
           defaultValue={contactDetails.name}
           required
-        ></StyledInput>
+        ></Input>
       </InputField>
       <InputField label="Number">
-        <StyledInput
+        <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}[\-.\s]?\(?\d{1,3}\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
@@ -84,7 +85,7 @@ export const ContactDetails = () => {
           placeholder="Number"
           defaultValue={contactDetails.number}
           required
-        ></StyledInput>
+        ></Input>
       </InputField>
 
       <Button type="submit">Save</Button>

@@ -65,6 +65,7 @@ export const AuthForm = () => {
             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
             title="The email must be a valid email address in the following format: characters@characters.domain."
             required
+            autocomplete="username"
             onChange={e => setEmail(e.target.value)}
           />
         </InputField>
