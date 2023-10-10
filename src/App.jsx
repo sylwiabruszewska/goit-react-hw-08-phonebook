@@ -13,8 +13,8 @@ import { useAuth } from 'hooks';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('pages/AuthPages/LoginPage'));
+const RegisterPage = lazy(() => import('pages/AuthPages/RegisterPage'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {

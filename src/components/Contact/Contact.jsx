@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { ButtonIcon } from 'components';
+import { openModal } from 'redux/modal/modalSlice';
+import { setContactDetails } from 'redux/contacts/contactsSlice';
 import {
   StyledItem,
   StyledBox,
@@ -8,14 +14,6 @@ import {
   StyledIconEdit,
   StyledIconDelete,
 } from './Contact.styled';
-
-import { ButtonIcon } from 'components';
-
-import { useDispatch } from 'react-redux';
-
-import { openModal } from 'redux/modal/modalSlice';
-
-import { setContactDetails } from 'redux/contacts/contactsSlice';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -72,4 +70,10 @@ export const Contact = ({ id, name, number }) => {
       </StyledItem>
     </>
   );
+};
+
+Contact.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };

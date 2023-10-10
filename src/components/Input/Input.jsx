@@ -41,4 +41,5 @@ Input.propTypes = {
   required: PropTypes.bool.isRequired,
   onChange: PropTypes.func,
   defaultValue: PropTypes.string,
+  autocomplete: PropTypes.string,
 };

@@ -15,10 +15,6 @@ export const StyledFilterInput = styled.input`
   font-weight: 600;
   transition: background-color 0.3s ease;
 
-  @media (min-width: 768px) {
-    width: 300px;
-  }
-
   @media (min-width: 1200px) {
     width: 500px;
   }

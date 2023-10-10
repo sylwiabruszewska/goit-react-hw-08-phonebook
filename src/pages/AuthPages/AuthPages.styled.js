@@ -14,16 +14,6 @@ export const StyledImg = styled.img`
   }
 `;
 
-export const StyledHeading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-`;
-
-export const StyledText = styled.p`
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-`;
-
 export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;

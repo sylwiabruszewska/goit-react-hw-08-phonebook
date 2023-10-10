@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 
-export const Heading = styled.h1`
+export const StyledHeading = styled.h1`
   color: gray;
   font-size: 2rem;
   text-transform: uppercase;
@@ -11,7 +11,7 @@ export const Heading = styled.h1`
   margin: 1rem 0 2.6rem;
 `;
 
-export const Text = styled.p`
+export const StyledText = styled.p`
   color: #a06cd5;
   font-weight: 500;
   font-size: 1.2rem;
@@ -31,7 +31,7 @@ export const StyledBook = styled.div`
   }
 `;
 
-export const Divider = styled.div`
+export const StyledDivider = styled.div`
   background-color: #f4f4f2;
   width: 2px;
 `;
@@ -52,7 +52,7 @@ export const StyledImg = styled.img`
   margin-bottom: 1rem;
 `;
 
-export const IconSearch = styled(BiSearchAlt)`
+export const StyledIconSearch = styled(BiSearchAlt)`
   font-size: 1.5rem;
   color: gray;
 `;
@@ -64,7 +64,7 @@ export const StyledBox = styled.div`
   margin: 2rem 0 1rem;
 `;
 
-export const ButtonUp = styled(BsFillArrowUpCircleFill)`
+export const StyledButtonUp = styled(BsFillArrowUpCircleFill)`
   position: fixed;
   right: 20px;
   bottom: 20px;

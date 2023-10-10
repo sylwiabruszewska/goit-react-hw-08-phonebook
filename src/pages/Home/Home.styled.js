@@ -43,13 +43,13 @@ export const StyledTextWrapper = styled.div`
   }
 `;
 
-export const PageHeading = styled.h1`
+export const StyledPageHeading = styled.h1`
   margin: 2rem 0;
   font-size: 3rem;
   text-align: center;
 `;
 
-export const EmphasizedText = styled.p`
+export const StyledEmphasizedText = styled.p`
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -60,7 +60,7 @@ export const EmphasizedText = styled.p`
   }
 `;
 
-export const ListItem = styled.li`
+export const StyledListItem = styled.li`
   margin-bottom: 1.2rem;
   text-align: center;
   padding: 0.6rem;
@@ -100,7 +100,7 @@ export const StyledIcon = styled.p`
   color: #a06cd5;
 `;
 
-export const HighlightedText = styled.span`
+export const StyledHighlightedText = styled.span`
   color: #fb8e5d;
 `;
 

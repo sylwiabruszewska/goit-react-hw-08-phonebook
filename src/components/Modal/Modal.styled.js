@@ -2,17 +2,7 @@ import styled from 'styled-components';
 
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-export const StyledIconClose = styled(AiFillCloseCircle)`
-  color: gray;
-  font-size: 30px;
-
-  &:hover {
-    color: #fb8e5d;
-    cursor: pointer;
-  }
-`;
-
-export const Overlay = styled.div`
+export const StyledOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -25,29 +15,7 @@ export const Overlay = styled.div`
   z-index: 999;
 `;
 
-export const BoxForButton = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-`;
-
-export const StyledModalTitle = styled.h3`
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 1.2rem;
-`;
-
-export const ModalBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const StyledModalContent = styled.p`
-  margin-bottom: 1.2rem;
-`;
-
-export const ModalContainer = styled.div`
+export const StyledModalContainer = styled.div`
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
@@ -60,7 +28,39 @@ export const ModalContainer = styled.div`
   min-width: 300px;
   width: fit-content;
   max-width: 60%;
-  position: relative;
   max-height: 90%;
+  position: relative;
   overflow-y: auto;
+`;
+
+export const StyledBoxForButton = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
+
+export const StyledIconClose = styled(AiFillCloseCircle)`
+  color: gray;
+  font-size: 30px;
+
+  &:hover {
+    color: #fb8e5d;
+    cursor: pointer;
+  }
+`;
+
+export const StyledModalBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StyledModalTitle = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+`;
+
+export const StyledModalContent = styled.p`
+  margin-bottom: 1.2rem;
 `;

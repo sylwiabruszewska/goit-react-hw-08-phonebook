@@ -9,6 +9,6 @@ export const StyledForm = styled.form`
   gap: 10px;
 `;
 
-export const IconAddContact = styled(LuUserPlus2)`
+export const StyledIconAddContact = styled(LuUserPlus2)`
   font-size: 1.5rem;
 `;

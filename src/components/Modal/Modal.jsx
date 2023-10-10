@@ -1,31 +1,32 @@
-import {
-  Overlay,
-  StyledIconClose,
-  BoxForButton,
-  StyledModalTitle,
-  ModalBox,
-  StyledModalContent,
-  ModalContainer,
-} from './Modal.styled.js';
-import { ContactDetails, ButtonIcon, Button } from 'components';
-import { useModal } from 'hooks/useModal.js';
 import { useSelector } from 'react-redux';
 
+import { ContactDetails, ButtonIcon, Button } from 'components';
+import { useModal } from 'hooks';
 import { selectModalContent } from 'redux/modal/selectors.js';
+import {
+  StyledOverlay,
+  StyledIconClose,
+  StyledBoxForButton,
+  StyledModalTitle,
+  StyledModalBox,
+  StyledModalContent,
+  StyledModalContainer,
+} from './Modal.styled.js';
 
-/////////
+///////// for modal - to check
 import { useDispatch } from 'react-redux';
-import { selectContacts } from 'redux/contacts/selectors';
-import Notiflix from 'notiflix';
+import {
+  selectContacts,
+  selectContactDetailsMemoized,
+} from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/operations';
-import { selectContactDetailsMemoized } from 'redux/contacts/selectors';
-
+import Notiflix from 'notiflix';
 ////////
 
 export const Modal = () => {
   const { handleCloseModal } = useModal();
 
-  ////////
+  //////// for modal - to check
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const contactDetails = useSelector(selectContactDetailsMemoized);
@@ -73,15 +74,14 @@ export const Modal = () => {
   };
 
   return (
-    <Overlay onClick={handleOverlayClick}>
-      <ModalContainer>
-        <BoxForButton>
+    <StyledOverlay onClick={handleOverlayClick}>
+      <StyledModalContainer>
+        <StyledBoxForButton>
           <ButtonIcon type="button" handler={handleCloseButton}>
             <StyledIconClose />
           </ButtonIcon>
-        </BoxForButton>
-
-        <ModalBox>
+        </StyledBoxForButton>
+        <StyledModalBox>
           <StyledModalTitle>{modalData.title}</StyledModalTitle>
           <StyledModalContent>{modalData.content}</StyledModalContent>
           {modalData.component && renderComponent()}
@@ -90,8 +90,8 @@ export const Modal = () => {
               {modalData.confirmButtonText}
             </Button>
           )}
-        </ModalBox>
-      </ModalContainer>
-    </Overlay>
+        </StyledModalBox>
+      </StyledModalContainer>
+    </StyledOverlay>
   );
 };

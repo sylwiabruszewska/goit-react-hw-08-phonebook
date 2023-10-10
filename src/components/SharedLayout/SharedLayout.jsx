@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Loader, Navigation, Modal } from 'components';
-import { Header } from './SharedLayout.styled';
-import { useSelector } from 'react-redux';
+import { StyledHeader } from './SharedLayout.styled';
 import { selectModalOpen } from 'redux/modal/selectors';
 
 export const SharedLayout = () => {
@@ -11,9 +11,9 @@ export const SharedLayout = () => {
 
   return (
     <>
-      <Header>
+      <StyledHeader>
         <Navigation />
-      </Header>
+      </StyledHeader>
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

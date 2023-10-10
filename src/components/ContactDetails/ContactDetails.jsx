@@ -1,14 +1,11 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import { StyledForm } from './ContactDetails.styled';
 import { Button, InputField, Input } from 'components';
-import Notiflix from 'notiflix';
-
-import { useSelector, useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
-
-import { selectContactDetails } from 'redux/contacts/selectors';
-import { selectContacts } from 'redux/contacts/selectors';
-
+import { selectContactDetails, selectContacts } from 'redux/contacts/selectors';
 import { closeModal } from 'redux/modal/modalSlice';
+import Notiflix from 'notiflix';
 
 Notiflix.Notify.init({
   width: '300px',

@@ -1,10 +1,10 @@
-import { StyledForm, IconAddContact } from './ContactForm.styled';
-import { Button, Input, InputField } from 'components';
-import Notiflix from 'notiflix';
-
 import { useSelector, useDispatch } from 'react-redux';
+
+import { StyledForm, StyledIconAddContact } from './ContactForm.styled';
+import { Button, Input, InputField } from 'components';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import Notiflix from 'notiflix';
 
 Notiflix.Notify.init({
   width: '300px',
@@ -65,7 +65,7 @@ export const ContactForm = () => {
       </InputField>
 
       <Button type="submit">
-        Add contact <IconAddContact />
+        Add contact <StyledIconAddContact />
       </Button>
     </StyledForm>
   );

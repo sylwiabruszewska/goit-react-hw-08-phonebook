@@ -1,6 +1,6 @@
-import { StyledFilterInput } from './FilterInput.styled';
-
 import { useDispatch } from 'react-redux';
+
+import { StyledFilterInput } from './FilterInput.styled';
 import { setFilter } from 'redux/contacts/filterSlice';
 
 export const FilterInput = () => {

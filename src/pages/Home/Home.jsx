@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import {
   StyledHome,
   StyledTextWrapper,
-  PageHeading,
-  HighlightedText,
-  EmphasizedText,
+  StyledPageHeading,
+  StyledHighlightedText,
+  StyledEmphasizedText,
   StyledList,
-  ListItem,
+  StyledListItem,
   StyledIcon,
   StyledParagraph,
   StyledLink,
@@ -30,15 +30,16 @@ const Home = () => {
       <StyledHome>
         <StyledImg src={photo} />
         <StyledTextWrapper>
-          <PageHeading>
-            Welcome to <HighlightedText>Phonebook App</HighlightedText>
-          </PageHeading>
-          <EmphasizedText>
+          <StyledPageHeading>
+            Welcome to{' '}
+            <StyledHighlightedText>Phonebook App</StyledHighlightedText>
+          </StyledPageHeading>
+          <StyledEmphasizedText>
             Managing your contacts has never been easier.
-          </EmphasizedText>
+          </StyledEmphasizedText>
 
           <StyledList>
-            <ListItem>
+            <StyledListItem>
               <StyledIcon>
                 <FaBook />
               </StyledIcon>
@@ -47,9 +48,9 @@ const Home = () => {
                 No more worries about losing important phone numbers. Stay
                 connected with ease.
               </p>
-            </ListItem>
+            </StyledListItem>
 
-            <ListItem>
+            <StyledListItem>
               <StyledIcon>
                 <BsStars />
               </StyledIcon>
@@ -58,9 +59,9 @@ const Home = () => {
                 Our user-friendly interface makes it simple to add and manage
                 your contacts with just a few clicks.
               </p>
-            </ListItem>
+            </StyledListItem>
 
-            <ListItem>
+            <StyledListItem>
               <StyledIcon>
                 <FaCloud />
               </StyledIcon>
@@ -69,7 +70,7 @@ const Home = () => {
                 Create your account and securely store all your contacts in one
                 place.
               </p>
-            </ListItem>
+            </StyledListItem>
           </StyledList>
 
           <Link to="/register">

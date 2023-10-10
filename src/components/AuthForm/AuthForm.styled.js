@@ -14,7 +14,6 @@ export const StyledForm = styled.form`
 
 export const StyledFormTitle = styled.h3`
   font-size: 1.2rem;
-
   color: #a06cd5;
   font-weight: 500;
 `;
@@ -34,7 +33,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const CheckboxLabel = styled.label`
+export const StyledCheckboxLabel = styled.label`
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -43,14 +42,14 @@ export const CheckboxLabel = styled.label`
     appearance: none;
     width: 20px;
     height: 20px;
-    border: 2px solid purple;
+    border: 2px solid #a06cd5;
     border-radius: 4px;
     margin-right: 10px;
     cursor: pointer;
   }
 
   input[type='checkbox']:checked {
-    background-color: purple;
+    background-color: #a06cd5;
     background-image: url(${icon});
     background-repeat: no-repeat;
     background-position: center;

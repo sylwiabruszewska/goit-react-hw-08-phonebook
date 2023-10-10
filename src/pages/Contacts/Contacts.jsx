@@ -15,15 +15,15 @@ import { fetchContacts } from 'redux/contacts/operations';
 
 import photo from 'images/contacts.png';
 import {
-  Heading,
-  Text,
+  StyledHeading,
+  StyledText,
   StyledBook,
-  Divider,
+  StyledDivider,
   StyledWrapper,
   StyledBox,
-  IconSearch,
+  StyledIconSearch,
   StyledImg,
-  ButtonUp,
+  StyledButtonUp,
 } from './Contacts.styled';
 
 const Contacts = () => {
@@ -69,12 +69,12 @@ const Contacts = () => {
         <Container>
           <StyledBook>
             <div>
-              <Heading>Your Contacts</Heading>
+              <StyledHeading>Your Contacts</StyledHeading>
 
               {contacts.length > 0 ? (
                 <>
                   <StyledBox>
-                    <IconSearch />
+                    <StyledIconSearch />
                     <FilterInput />
                   </StyledBox>
                   {error ? <Error /> : <ContactList />}
@@ -83,17 +83,17 @@ const Contacts = () => {
                 <p>It's so empty here! Add some contacts.</p>
               )}
             </div>
-            <Divider />
+            <StyledDivider />
             <StyledWrapper>
               <StyledImg src={photo} />
-              <Text>Add a new contact here:</Text>
+              <StyledText>Add a new contact here:</StyledText>
               <ContactForm />
             </StyledWrapper>
           </StyledBook>
         </Container>
       </Content>
 
-      {showButton && <ButtonUp onClick={scrollToTop} />}
+      {showButton && <StyledButtonUp onClick={scrollToTop} />}
     </>
   );
 };

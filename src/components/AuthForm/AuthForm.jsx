@@ -4,18 +4,16 @@ import { register, logIn } from 'redux/auth/operations';
 import { useState } from 'react';
 import Notiflix from 'notiflix';
 
+import { Button, Input, InputField } from 'components';
+import { openModal } from 'redux/modal/modalSlice';
+import { terms } from './terms';
 import {
   StyledForm,
   StyledFormTitle,
   StyledIcon,
   StyledLink,
-  CheckboxLabel,
+  StyledCheckboxLabel,
 } from './AuthForm.styled';
-import { Button, Input, InputField } from 'components';
-
-import { openModal } from 'redux/modal/modalSlice';
-
-import { terms } from './terms';
 
 export const AuthForm = () => {
   const [name, setName] = useState('');
@@ -106,7 +104,7 @@ export const AuthForm = () => {
         </InputField>
 
         {location === '/register' ? (
-          <CheckboxLabel>
+          <StyledCheckboxLabel>
             <input
               type="checkbox"
               checked={isAgreed}
@@ -123,7 +121,7 @@ export const AuthForm = () => {
                 Terms and Privacy Policy?
               </StyledLink>
             </div>
-          </CheckboxLabel>
+          </StyledCheckboxLabel>
         ) : null}
 
         <Button type="submit">
