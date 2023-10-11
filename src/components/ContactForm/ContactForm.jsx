@@ -64,7 +64,7 @@ export const ContactForm = () => {
         />
       </InputField>
 
-      <Button type="submit">
+      <Button type="submit" aria-label="add contact">
         Add contact <StyledIconAddContact />
       </Button>
     </StyledForm>
