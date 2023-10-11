@@ -79,3 +79,7 @@ export const StyledButtonUp = styled(BsFillArrowUpCircleFill)`
     cursor: pointer;
   }
 `;
+
+export const StyledLabel = styled.span`
+  display: none;
+`;

@@ -28,7 +28,7 @@ const Home = () => {
         <title>Phonebook App</title>
       </Helmet>
       <StyledHome>
-        <StyledImg src={photo} />
+        <StyledImg src={photo} role="presentation" aria-hidden="true" />
         <StyledTextWrapper>
           <StyledPageHeading>
             Welcome to{' '}
@@ -74,10 +74,15 @@ const Home = () => {
           </StyledList>
 
           <Link to="/register">
-            <Button type="button">Get Started Now</Button>
+            <Button type="button" aria-label="register">
+              Get Started Now
+            </Button>
           </Link>
           <StyledParagraph>
-            Already a member? <StyledLink to="/login">Sign in</StyledLink>
+            Already a member?{' '}
+            <StyledLink to="/login" aria-label="login">
+              Sign in
+            </StyledLink>
           </StyledParagraph>
         </StyledTextWrapper>
       </StyledHome>

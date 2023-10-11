@@ -16,7 +16,7 @@ const LoginPage = () => {
           <Container>
             <AuthForm />
           </Container>
-          <StyledImg src={photo} />
+          <StyledImg src={photo} role="presentation" aria-hidden="true" />
         </StyledWrapper>
       </Content>
     </>

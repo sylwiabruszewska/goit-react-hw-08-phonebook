@@ -49,26 +49,24 @@ export const Contact = ({ id, name, number }) => {
   };
 
   return (
-    <>
-      <StyledItem>
-        <StyledBoxItem>
-          <StyledIcon />
+    <StyledItem>
+      <StyledBoxItem>
+        <StyledIcon />
 
-          <StyledBox>
-            <StyledName>{name}</StyledName>
-            <StyledNumber href={`tel:${number}`}>+{number}</StyledNumber>
-          </StyledBox>
-        </StyledBoxItem>
-        <div>
-          <ButtonIcon type="button" handler={() => handleContactEdit()}>
-            <StyledIconEdit />
-          </ButtonIcon>
-          <ButtonIcon type="button" handler={() => handleContactDelete()}>
-            <StyledIconDelete />
-          </ButtonIcon>
-        </div>
-      </StyledItem>
-    </>
+        <StyledBox>
+          <StyledName>{name}</StyledName>
+          <StyledNumber href={`tel:${number}`}>+{number}</StyledNumber>
+        </StyledBox>
+      </StyledBoxItem>
+      <div>
+        <ButtonIcon type="button" handler={() => handleContactEdit()}>
+          <StyledIconEdit />
+        </ButtonIcon>
+        <ButtonIcon type="button" handler={() => handleContactDelete()}>
+          <StyledIconDelete />
+        </ButtonIcon>
+      </div>
+    </StyledItem>
   );
 };
 

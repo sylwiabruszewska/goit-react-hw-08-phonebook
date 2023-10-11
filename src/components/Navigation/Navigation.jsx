@@ -20,9 +20,15 @@ export const Navigation = () => {
         <UserMenu />
       ) : (
         <StyledBox>
-          <StyledLink to="/contacts">Contacts</StyledLink>
-          <StyledLink to="/login">Sign in</StyledLink>
-          <StyledLink to="/register">Register</StyledLink>
+          <StyledLink to="/contacts" aria-label="contact book">
+            Contacts
+          </StyledLink>
+          <StyledLink to="/login" aria-label="login">
+            Sign in
+          </StyledLink>
+          <StyledLink to="/register" aria-label="register">
+            Register
+          </StyledLink>
         </StyledBox>
       )}
     </StyledNav>

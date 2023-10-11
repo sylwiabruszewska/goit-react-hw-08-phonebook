@@ -104,15 +104,17 @@ export const AuthForm = () => {
         </InputField>
 
         {location === '/register' ? (
-          <StyledCheckboxLabel>
+          <StyledCheckboxLabel htmlFor="terms-checkbox">
             <input
               type="checkbox"
               checked={isAgreed}
+              id="terms-checkbox"
               onChange={() => setIsAgreed(!isAgreed)}
             />
             <div>
               Do you accept our
               <StyledLink
+                aria-label="Learn more about our Terms and Privacy Policy"
                 onClick={e => {
                   e.preventDefault();
                   openModalOnClick();
@@ -124,18 +126,28 @@ export const AuthForm = () => {
           </StyledCheckboxLabel>
         ) : null}
 
-        <Button type="submit">
-          {location === '/register'
-            ? `Sign Up and Stay Connected!`
-            : `Let's Get Contacted!`}
-        </Button>
+        {location === '/register' ? (
+          <Button type="submit" aria-label="register">
+            Sign Up and Stay Connected!
+          </Button>
+        ) : (
+          <Button type="submit" aria-label="login">
+            Let's Get Contacted!
+          </Button>
+        )}
         {location === '/login' ? (
           <p>
-            New here? <StyledLink to="/register">Sign up</StyledLink>
+            New here?{' '}
+            <StyledLink to="/register" aria-label="register">
+              Sign up
+            </StyledLink>
           </p>
         ) : (
           <p>
-            Are you already in? <StyledLink to="/login">Sign in</StyledLink>
+            Are you already in?{' '}
+            <StyledLink to="/login" aria-label="login">
+              Sign in
+            </StyledLink>
           </p>
         )}
       </StyledForm>

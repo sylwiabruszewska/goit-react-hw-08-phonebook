@@ -24,6 +24,7 @@ import {
   StyledIconSearch,
   StyledImg,
   StyledButtonUp,
+  StyledLabel,
 } from './Contacts.styled';
 
 const Contacts = () => {
@@ -74,8 +75,14 @@ const Contacts = () => {
               {contacts.length > 0 ? (
                 <>
                   <StyledBox>
-                    <StyledIconSearch />
-                    <FilterInput />
+                    <label htmlFor="filter-input">
+                      <StyledLabel>Search contacts:</StyledLabel>
+                    </label>
+                    <StyledIconSearch />{' '}
+                    <FilterInput
+                      id="filter-input"
+                      ariaLabelledby="filter-label"
+                    />
                   </StyledBox>
                   {error ? <Error /> : <ContactList />}
                 </>
@@ -85,7 +92,7 @@ const Contacts = () => {
             </div>
             <StyledDivider />
             <StyledWrapper>
-              <StyledImg src={photo} />
+              <StyledImg src={photo} role="presentation" aria-hidden="true" />
               <StyledText>Add a new contact here:</StyledText>
               <ContactForm />
             </StyledWrapper>

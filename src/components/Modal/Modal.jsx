@@ -75,18 +75,34 @@ export const Modal = () => {
 
   return (
     <StyledOverlay onClick={handleOverlayClick}>
-      <StyledModalContainer>
+      <StyledModalContainer
+        role="dialog"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-content"
+      >
         <StyledBoxForButton>
-          <ButtonIcon type="button" handler={handleCloseButton}>
+          <ButtonIcon
+            type="button"
+            handler={handleCloseButton}
+            aria-label="close modal"
+          >
             <StyledIconClose />
           </ButtonIcon>
         </StyledBoxForButton>
         <StyledModalBox>
-          <StyledModalTitle>{modalData.title}</StyledModalTitle>
-          <StyledModalContent>{modalData.content}</StyledModalContent>
+          <StyledModalTitle id="modal-title">
+            {modalData.title}
+          </StyledModalTitle>
+          <StyledModalContent id="modal-content">
+            {modalData.content}
+          </StyledModalContent>
           {modalData.component && renderComponent()}
           {modalData.showConfirmButton && (
-            <Button type="button" handler={handleConfirm}>
+            <Button
+              type="button"
+              handler={handleConfirm}
+              aria-label="confirm action"
+            >
               {modalData.confirmButtonText}
             </Button>
           )}

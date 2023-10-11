@@ -16,6 +16,8 @@ export const FilterInput = () => {
       type="text"
       name="filter"
       placeholder="Search contacts..."
+      id="filter-input"
+      aria-labelledby="filter-label"
       onChange={handleFilterChange}
     />
   );
