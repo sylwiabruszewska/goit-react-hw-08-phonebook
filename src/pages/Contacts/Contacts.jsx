@@ -92,7 +92,12 @@ const Contacts = () => {
             </div>
             <StyledDivider />
             <StyledWrapper>
-              <StyledImg src={photo} role="presentation" aria-hidden="true" />
+              <StyledImg
+                src={photo}
+                alt=""
+                role="presentation"
+                aria-hidden="true"
+              />
               <StyledText>Add a new contact here:</StyledText>
               <ContactForm />
             </StyledWrapper>

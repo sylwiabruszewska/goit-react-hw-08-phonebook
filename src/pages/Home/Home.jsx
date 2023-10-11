@@ -28,7 +28,7 @@ const Home = () => {
         <title>Phonebook App</title>
       </Helmet>
       <StyledHome>
-        <StyledImg src={photo} role="presentation" aria-hidden="true" />
+        <StyledImg src={photo} alt="" role="presentation" aria-hidden="true" />
         <StyledTextWrapper>
           <StyledPageHeading>
             Welcome to{' '}

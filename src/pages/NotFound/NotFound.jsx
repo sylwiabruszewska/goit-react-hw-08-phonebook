@@ -29,7 +29,12 @@ const NotFound = () => {
               <Button type="button">Go Home</Button>
             </Link>
           </div>
-          <StyledImg src={photo} role="presentation" aria-hidden="true" />
+          <StyledImg
+            src={photo}
+            alt=""
+            role="presentation"
+            aria-hidden="true"
+          />
         </StyledWrapper>
       </Content>
     </>

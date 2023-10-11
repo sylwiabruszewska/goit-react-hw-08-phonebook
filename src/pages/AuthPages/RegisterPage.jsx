@@ -16,7 +16,12 @@ const RegisterPage = () => {
           <Container>
             <AuthForm />
           </Container>
-          <StyledImg src={photo} role="presentation" aria-hidden="true" />
+          <StyledImg
+            src={photo}
+            alt=""
+            role="presentation"
+            aria-hidden="true"
+          />
         </StyledWrapper>
       </Content>
     </>

@@ -59,10 +59,18 @@ export const Contact = ({ id, name, number }) => {
         </StyledBox>
       </StyledBoxItem>
       <div>
-        <ButtonIcon type="button" handler={() => handleContactEdit()}>
+        <ButtonIcon
+          type="button"
+          handler={() => handleContactEdit()}
+          aria-label="edit contact"
+        >
           <StyledIconEdit />
         </ButtonIcon>
-        <ButtonIcon type="button" handler={() => handleContactDelete()}>
+        <ButtonIcon
+          type="button"
+          handler={() => handleContactDelete()}
+          aria-label="delete contact"
+        >
           <StyledIconDelete />
         </ButtonIcon>
       </div>
